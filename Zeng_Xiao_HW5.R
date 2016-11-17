@@ -46,6 +46,9 @@ for (i in (1:ncol(diamonds))){
 
 #Question 7
 #Getting the number if NAs in each column
+##Prof G - na_col accumulated across all
+##Prof G - columns but should have been reset 
+##Prof G - to 0 for each column.
 na_col <- 0
 for (i in (1:ncol(diamonds))){
   j <- diamonds[,i]  #for every column
@@ -64,6 +67,7 @@ for (i in (1:ncol(diamonds))){
 
 na_total <- 0
 na_row <- 0
+
 for (i in (1:nrow(diamonds))){
   j <- diamonds[i,]
   for (value in j){
@@ -122,7 +126,7 @@ f <- function(dataframe){
   output = data.frame(name_pairs,correlations) #combining two columns
   return(output)
 }
-  
+##Prof G - Correlations were all NA, why? 
 
 print(f(diamonds))
 
