@@ -2,30 +2,32 @@
 
 #Question 1
 #a)
-c(1:20) 
+c(1:20) #1,2,3...20
 
 #b)
-c(20:1) 
+c(20:1) #20,19...1
 
 #c)
 c(c(1:19),20,c(19:1)) 
 
-#d)
+#d) - corrected
 ##Prof G - There's an error in the next line
 ##Prof G - so I commented it out to continue
 ##Prof G - grading.
-#tmp <- cx[2](4,6,3)   
+
+tmp <- c(4,6,3)   #Assigning (4,5,6) to varibale tmp
+tmp
 
 #e) 
-rep(c(4,6,3),10)   
+rep(c(4,6,3),10)   #ten occurence of (4,6,3)
 #f)
-c(rep(c(4,6,3),10),4)   
+c(rep(c(4,6,3),10),4)   #ten occurence of (4,6,3) and one 4
 #g)
-c(rep(4,10),rep(6,20),rep(3,30))  
+c(rep(4,10),rep(6,20),rep(3,30))  #ten occurence of 4, 20 occurence of 6 and 30 occurence of 3
 
 #Question 2
-x <- seq(3,6, by = 0.1)
-c(exp(x)*cos(x))
+x <- seq(3,6, by = 0.1) #3,3.1...6
+c(exp(x)*cos(x)) 
 
 
 #Question 3
@@ -68,7 +70,7 @@ q7 ##Prof G - added this
 #Question 6
 
 set.seed(50)
-xVec <- sample(0:999,250,replace = T)
+xVec <- sample(0:999,250,replace = T)  #sample space
 yVec <- sample(0:999,250,replace = T)
 
 x <-xVec   #Assign x and y
@@ -100,10 +102,11 @@ d2 <- c(d1 + 1)
 
 ##Prof G - Produces INF result.
 ##Prof G - Missed a minus sign before x
-qd <- c(exp(x[d2])/(x[d1]+10))
+qd <- c(exp(-x[d2])/(x[d1]+10))  #Corrected, added a minus sign before x
 sum(qd)
 
 #Question 7
+
 #Getting data
 set.seed(50)
 xVec<-sample(0:999,250,replace=T)
@@ -127,18 +130,17 @@ c(sqrt(abs(xVec-mean(xVec))))
 sum(yVec>max(yVec)-200)   #Counting how many values are True
 
 #f).
-sum(xVec%%2==0)
+sum(xVec%%2==0) #How many numbers in xVec are divisible by 2
 
 #g).
-xVec[order(yVec, decreasing = FALSE)]
+xVec[order(yVec, decreasing = FALSE)]  #Sorting the numbers in the vector xVec in the order of increasing values of yVec
 
 #h).
 yVec[c(T,F,F)] #Picking the first element in every three elements to get 1,4,7...
 
 ##Question 8
+
 1+sum(cumprod(seq(2,38,by=2)/seq(3,39,by=2)))
-
 #cumprod() function returns the cumulative multiplication results.
+
 ##Prof G - What does this mean?
-
-
